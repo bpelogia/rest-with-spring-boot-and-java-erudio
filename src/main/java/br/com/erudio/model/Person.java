@@ -1,5 +1,6 @@
 package br.com.erudio.model;
 
+import br.com.erudio.enumeration.Gender;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -22,12 +23,10 @@ public class Person implements Serializable {
 
     public Person(){}
     public Person(
-            String id,
             String firstName,
             String lastName,
             String address,
             Gender gender) {
-        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;

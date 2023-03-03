@@ -1,7 +1,7 @@
 package br.com.erudio.unittests.mapper.mocks;
 
 import br.com.erudio.data.vo.v1.PersonVO;
-import br.com.erudio.model.Gender;
+import br.com.erudio.enumeration.Gender;
 import br.com.erudio.model.Person;
 
 import java.util.ArrayList;
@@ -35,13 +35,14 @@ public class MockPerson {
     }
     
     public Person mockEntity(Integer number) {
-        return new Person(
-                number.toString(),
+        var entity =  new Person(
                 "First Name Test" + number,
                 "Last Name Test" + number,
                 "Addres Test" + number,
                 (number % 2)==0 ? Gender.MALE : Gender.FEMALE
         );
+        entity.setId(number.toString());
+        return entity;
     }
 
     public PersonVO mockVO(Integer number) {

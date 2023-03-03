@@ -12,7 +12,7 @@ public class PersonMapper {
 	
 	public PersonVO convertEntityToVo(Person person) {
 		PersonVO vo = new PersonVO();
-		vo.setId(person.getId());
+		vo.setKey(person.getId());
 		vo.setAddress(person.getAddress());
 		vo.setBirthDay(LocalDate.now());
 		vo.setFirstName(person.getFirstName());
@@ -24,7 +24,7 @@ public class PersonMapper {
 	
 	public Person convertVoToEntity(PersonVO person) {
 		Person entity = new Person();
-		entity.setId(person.getId());
+		entity.setId(person.getKey());
 		entity.setAddress(person.getAddress());
 		//vo.setBirthDay(new Date());
 		entity.setFirstName(person.getFirstName());
