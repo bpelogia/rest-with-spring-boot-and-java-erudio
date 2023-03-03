@@ -1,11 +1,14 @@
 package br.com.erudio.data.vo.v1;
 
 import br.com.erudio.model.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
 import java.io.Serializable;
 
-@Data(staticConstructor = "person")
+@Data
 public class PersonVO implements Serializable {
     private static final long serialVersionUID = 1L;
 

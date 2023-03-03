@@ -1,26 +1,32 @@
 package br.com.erudio.data.vo.v2;
 
 import br.com.erudio.model.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-@Data(staticConstructor = "person")
-public class PersonVO2 implements Serializable {
+@Data
+@JsonPropertyOrder({"id", "address", "first_name", "last_name", "gender"})
+public class PersonVO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String id;
+    @JsonProperty("first_name")
     private String firstName;
+    @JsonProperty("last_name")
     private String lastName;
     private String address;
     private Gender gender;
     private LocalDate birthDay;
+    @JsonIgnore
     private Integer updatedTimes = 0;
 
-    public PersonVO2() {}
-    public PersonVO2(
+    public PersonVO() {}
+    public PersonVO(
             String id,
             String firstName,
             String lastName,

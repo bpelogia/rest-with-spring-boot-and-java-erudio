@@ -2,7 +2,7 @@ package br.com.erudio.mapper.custom;
 
 import java.time.LocalDate;
 
-import br.com.erudio.data.vo.v2.PersonVO2;
+import br.com.erudio.data.vo.v2.PersonVO;
 import org.springframework.stereotype.Service;
 
 import br.com.erudio.model.Person;
@@ -10,8 +10,8 @@ import br.com.erudio.model.Person;
 @Service
 public class PersonMapper {
 	
-	public PersonVO2 convertEntityToVo(Person person) {
-		PersonVO2 vo = new PersonVO2();
+	public PersonVO convertEntityToVo(Person person) {
+		PersonVO vo = new PersonVO();
 		vo.setId(person.getId());
 		vo.setAddress(person.getAddress());
 		vo.setBirthDay(LocalDate.now());
@@ -22,7 +22,7 @@ public class PersonMapper {
 	}
 	
 	
-	public Person convertVoToEntity(PersonVO2 person) {
+	public Person convertVoToEntity(PersonVO person) {
 		Person entity = new Person();
 		entity.setId(person.getId());
 		entity.setAddress(person.getAddress());
