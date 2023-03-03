@@ -5,6 +5,7 @@ import br.com.erudio.model.Person;
 import br.com.erudio.services.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,18 +17,17 @@ public class PersonController {
     @Autowired
     private PersonServices personServices;
 
-    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Person> fetchAllStudents() {
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Person> fetchAllPersons() {
         return personServices.findAll();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Person findPersonById(@PathVariable(value = "id") String id){
         return personServices.findById(id);
     }
 
-    @RequestMapping(
-            method = RequestMethod.POST,
+    @PostMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
@@ -35,8 +35,7 @@ public class PersonController {
         return personServices.create(person);
     }
 
-    @RequestMapping(
-            method = RequestMethod.PUT,
+    @PutMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
@@ -44,9 +43,10 @@ public class PersonController {
         return personServices.update(person);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deletePerson(@PathVariable(value = "id") String id){
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<?> deletePerson(@PathVariable(value = "id") String id){
         personServices.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

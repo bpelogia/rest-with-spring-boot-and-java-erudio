@@ -17,7 +17,7 @@ public class Person implements Serializable {
     @Id
     private String id;
     private String firstName;
-    @Indexed(unique = true)
+    //@Indexed(unique = true)
     private String lastName;
     private String address;
     private Gender gender;
