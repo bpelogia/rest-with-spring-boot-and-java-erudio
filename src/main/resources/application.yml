@@ -5,8 +5,8 @@ spring:
       username: rootuser
       password: rootpass
       database: erudio
-      #port: '27018'
-      port: '27017'
+      port: '27018'
+      #port: '27017'
       host: localhost
       auto-index-creation: true
 

@@ -1,27 +1,23 @@
-package br.com.erudio.model;
+package br.com.erudio.data.vo.v1;
 
+import br.com.erudio.model.Gender;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
-@Data
-@Document
-public class Person implements Serializable {
+@Data(staticConstructor = "person")
+public class PersonVO implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Id
     private String id;
     private String firstName;
-    //@Indexed(unique = true)
     private String lastName;
     private String address;
     private Gender gender;
     private Integer updatedTimes = 0;
 
-    public Person(){}
-    public Person(
+    public PersonVO() {}
+    public PersonVO(
             String id,
             String firstName,
             String lastName,
