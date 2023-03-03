@@ -14,16 +14,16 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    private PersonServices services;
+    private PersonServices personServices;
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Person> findAll() {
-        return services.findAll();
+    public List<Person> fetchAllStudents() {
+        return personServices.findAll();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Person findById(@PathVariable(value = "id") String id){
-        return services.findById(id);
+    public Person findPersonById(@PathVariable(value = "id") String id){
+        return personServices.findById(id);
     }
 
     @RequestMapping(
@@ -31,8 +31,8 @@ public class PersonController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Person create(@RequestBody Person person){
-        return services.create(person);
+    public Person createPerson(@RequestBody Person person){
+        return personServices.create(person);
     }
 
     @RequestMapping(
@@ -40,13 +40,13 @@ public class PersonController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Person update(@RequestBody Person person){
-        return services.update(person);
+    public Person updatePerson(@RequestBody Person person){
+        return personServices.update(person);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable(value = "id") String id){
-        services.delete(id);
+    public void deletePerson(@PathVariable(value = "id") String id){
+        personServices.delete(id);
     }
 
 }
