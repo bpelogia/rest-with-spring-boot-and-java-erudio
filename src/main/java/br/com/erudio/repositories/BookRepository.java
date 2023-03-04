@@ -1,14 +1,14 @@
 package br.com.erudio.repositories;
 
-import br.com.erudio.data.model.Person;
+import br.com.erudio.data.model.Book;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface PersonRepository extends MongoRepository<Person, String> {
+public interface BookRepository extends MongoRepository<Book, String> {
 
-    Optional<Person> findPersonByFirstName(String firstName);
+    Optional<Book> findBookByPrice(Double price);
 
 }

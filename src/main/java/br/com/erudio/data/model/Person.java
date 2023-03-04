@@ -1,6 +1,6 @@
-package br.com.erudio.model;
+package br.com.erudio.data.model;
 
-import br.com.erudio.enumeration.Gender;
+import br.com.erudio.data.enumeration.Gender;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

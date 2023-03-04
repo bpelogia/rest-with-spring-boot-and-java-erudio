@@ -1,6 +1,6 @@
 package br.com.erudio.data.vo.v2;
 
-import br.com.erudio.enumeration.Gender;
+import br.com.erudio.data.enumeration.Gender;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

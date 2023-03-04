@@ -1,11 +1,11 @@
-package br.com.erudio.mapper.custom;
+package br.com.erudio.data.mapper.custom;
 
 import java.time.LocalDate;
 
 import br.com.erudio.data.vo.v2.PersonVO;
 import org.springframework.stereotype.Service;
 
-import br.com.erudio.model.Person;
+import br.com.erudio.data.model.Person;
 
 @Service
 public class PersonMapper {

@@ -1,4 +1,4 @@
-package br.com.erudio.serialization.converter;
+package br.com.erudio.framework.serialization.converter;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
