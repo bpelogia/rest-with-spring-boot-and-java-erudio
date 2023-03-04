@@ -1,3 +1,5 @@
+server:
+  port: 8888
 cors:
   originPatterns: "http://localhost:8080,http://localhost:3000"
 spring:
@@ -8,7 +10,6 @@ spring:
       password: rootpass
       database: erudio
       port: '27018'
-      #port: '27017'
       host: localhost
       auto-index-creation: true
 springdoc:
