@@ -6,7 +6,6 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.containers.GenericContainer;
-import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.lifecycle.Startables;
 import org.testcontainers.utility.DockerImageName;
 
@@ -18,10 +17,7 @@ public class AbstractIntegrationTest {
 
     static class CustomMongoDbContainer extends GenericContainer<CustomMongoDbContainer> {
         public CustomMongoDbContainer() {
-            super(DockerImageName.parse("mongo:latest"));
-            withEnv("MONGO_INITDB_ROOT_USERNAME", "rootuser");
-            withEnv("MONGO_INITDB_ROOT_PASSWORD", "rootpass");
-            withEnv("MONGO_INITDB_DATABASE", "erudio");
+            super(DockerImageName.parse("mongo"));
             withExposedPorts(27017);
         }
     }
@@ -34,9 +30,9 @@ public class AbstractIntegrationTest {
 
         private static Map<String, String> createConnectionConfiguration() {
             return Map.of(
-                    "spring.data.mongodb.username", mongoDBContainer.getEnv().get(0),
-                    "spring.data.mongodb.password", mongoDBContainer.getEnv().get(1),
-                    "spring.data.mongodb.database", mongoDBContainer.getEnv().get(2)
+                    "spring.data.mongodb.username", "rootuser",
+                    "spring.data.mongodb.password", "rootpass",
+                    "spring.data.mongodb.database", "integrationtest"
             );
         }
 
