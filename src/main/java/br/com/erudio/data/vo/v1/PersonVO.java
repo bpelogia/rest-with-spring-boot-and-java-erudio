@@ -7,11 +7,14 @@ import com.github.dozermapper.core.Mapping;
 import lombok.Data;
 import org.springframework.hateoas.RepresentationModel;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @Data
 @JsonPropertyOrder({"id", "firstName", "lastName", "gender", "address"})
 public class PersonVO extends RepresentationModel<PersonVO> implements Serializable {
+
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Mapping("id")

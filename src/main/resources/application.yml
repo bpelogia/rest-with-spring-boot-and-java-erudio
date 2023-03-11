@@ -1,5 +1,10 @@
 cors:
   originPatterns: "http://localhost:8080,http://localhost:3000"
+security:
+    jwt:
+      token:
+      secret-key: 53cr37
+      expire-length: 3600000
 spring:
   data:
     mongodb:
@@ -12,6 +17,8 @@ spring:
       host: localhost
       auto-index-creation: true
 springdoc:
-      pathsToMatch: /api/**/v1/**
+      pathsToMatch:
+        - /auth/**
+        - /api/**/v1/**
       swagger-ui:
         use-root-path: true

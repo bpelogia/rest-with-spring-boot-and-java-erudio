@@ -6,6 +6,7 @@ import com.github.dozermapper.core.Mapping;
 import lombok.Data;
 import org.springframework.hateoas.RepresentationModel;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 @JsonPropertyOrder({"id", "title", "author", "price", "launchDate"})
 public class BookVO extends RepresentationModel<BookVO> implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	@Mapping("id")
