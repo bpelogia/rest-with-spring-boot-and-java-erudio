@@ -1,4 +1,4 @@
-package br.com.erudio.integrationtest.controller;
+package br.com.erudio.integrationtest.controller.withjson;
 
 import br.com.erudio.configs.TestConfigs;
 import br.com.erudio.data.enumeration.Gender;
